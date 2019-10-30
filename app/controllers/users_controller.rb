@@ -10,12 +10,15 @@ class UsersController < ApplicationController
   end 
 
   def new
-       @user = User.new
+      
+     @user = User.new
+       
   end 
 
   def create
-      @user = User.find_or_create_by(user_params)
+      @user = User.new(user_params)
       if @user.save
+          log_in @user
        redirect_to user_path(@user)
       else 
        render :new 
@@ -25,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-          params.require(:user).permit(:name, :password_digest)
+          params.require(:user).permit(:name, :password)
   end 
 
 end

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>    
+
+<html> 
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+  <%end%>
   <head>
     <title>RecipeManager</title>
     <%= csrf_meta_tags %>

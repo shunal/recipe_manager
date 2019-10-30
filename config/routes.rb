@@ -12,7 +12,12 @@ Rails.application.routes.draw do
     
     resources :ingredients
   
-    
+    get    '/signup',  to: 'users#new'
+    get    '/login',   to: 'sessions#new'
+    post   '/login',   to: 'sessions#create'
+    delete '/logout',  to: 'sessions#destroy'
+    resources :users
+
     get '/auth/facebook/callback' => 'sessions#createfb'
     
   end 

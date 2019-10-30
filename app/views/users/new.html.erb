@@ -14,16 +14,16 @@
 <% end %>
 <h1>Welcome To The Recipes Manager Site</h1>
 <h2>You can create your own recipes and view recipes created by other users</h2>
-<h3>Sign Up/ Log In</h3>
+<h3>Sign Up</h3>
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :password %>
-  <%= f.text_field :password_digest %>
+  <%= f.password_field :password %>
   <%= f.submit "Submit" %>
 <% end %>
 
 <h4>OR </h4>
-
-
+LOGIN LINK TO SESSIONS NEW
+<h4>OR </h4>
   <%= link_to('Log in with Facebook!', '/auth/facebook') %>
