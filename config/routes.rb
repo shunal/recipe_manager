@@ -1,3 +1,20 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  Rails.application.routes.draw do  
+    root 'users#new'
+  
+    resources :users do 
+      resources:recipes
+      end
+  
+    resources :recipes do
+      resources :ingredients
+    end 
+    
+    resources :ingredients
+  
+    
+    get '/auth/facebook/callback' => 'sessions#createfb'
+    
+  end 
+  
 end

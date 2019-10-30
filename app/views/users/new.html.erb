@@ -1,0 +1,29 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this error from being saved:
+    </h2>
+ 
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<h1>Welcome To The Recipes Manager Site</h1>
+<h2>You can create your own recipes and view recipes created by other users</h2>
+<h3>Sign Up/ Log In</h3>
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :password %>
+  <%= f.text_field :password_digest %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<h4>OR </h4>
+
+
+  <%= link_to('Log in with Facebook!', '/auth/facebook') %>

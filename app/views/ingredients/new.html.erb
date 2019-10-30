@@ -1,0 +1,21 @@
+<% if @ingredient.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@ingredient.errors.count, "error") %>
+      prohibited this error from being saved:
+    </h2>
+ 
+    <ul>
+    <% @ingredient.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @ingredient do |f| %>
+    <label>Ingredient name:</label>
+    <%= f.hidden_field :recipe_id %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>

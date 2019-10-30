@@ -1,0 +1,6 @@
+<%= form_for @recipe do |f| %>
+    <label>Recipe name:</label>
+    <%= f.hidden_field :user_id %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
