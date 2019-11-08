@@ -1,8 +1,6 @@
 <h2>Here are the recipes you have created</h2>
 <% @user.recipes.each do |t|%>
   <h4><%= link_to t.name, user_recipe_path(@user, t.id) %></h4>
-  <%= t.user_id %>
-
 <div>
 
 <%end%>

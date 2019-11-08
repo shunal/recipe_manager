@@ -12,9 +12,13 @@
     </ul>
   </div>
 <% end %>
+
+
 <h1>Welcome To The Recipes Manager Site</h1>
 <h2>You can create your own recipes and view recipes created by other users</h2>
 <h3>Sign Up</h3>
+
+# Create new User
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -23,7 +27,12 @@
   <%= f.submit "Submit" %>
 <% end %>
 
+
 <h4>OR </h4>
-LOGIN LINK TO SESSIONS NEW
+
+# Log in Existing User
+<%= link_to "Log In", login_path %>
+
 <h4>OR </h4>
+# Log in with Facebook
   <%= link_to('Log in with Facebook!', '/auth/facebook') %>

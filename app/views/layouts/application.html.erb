@@ -2,7 +2,7 @@
 
 <html> 
 <% if logged_in? %>
-  <%= link_to "Log out", logout_path, method: :delete %>
+  <h1><%= link_to current_user.name, user_path(current_user.id) %></h1><%= link_to "Log out", logout_path, method: :delete %>
   <%end%>
   <head>
     <title>RecipeManager</title>
