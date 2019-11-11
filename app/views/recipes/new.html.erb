@@ -1,6 +1,24 @@
+<% if @recipe.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@recipe.errors.count, "error") %>
+      prohibited this error from being saved:
+    </h2>
+ 
+    <ul>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
 <%= form_for @recipe do |f| %>
     <label>Recipe name:</label>
     <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :category_id %>
     <%= f.text_field :name %>
     <%= f.submit %>
-  <% end %>
+<%end%>
+
+

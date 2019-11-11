@@ -1,4 +1,9 @@
-<h1>Here are all the recipes that you have created</h1>
+<h1>Here are all the recipes that users have created</h1>
     <% @recipes.each do |t|%>
-        <%= t.name %>
+        <ul><%=link_to t.name, recipe_path(t.id) %></ul>
     <%end%>
+
+    <%= form_tag(recipes_path, method: :get) do %>
+        <%= text_field_tag :filter, params[:filter] %>
+        <%= submit_tag "filter"%>
+        <%end %>

@@ -1,0 +1,4 @@
+<h1>Here are all the Categories created by users</h1>
+    <% @categories.each do |t|%>
+        <ul><%= link_to t.name, category_path(t.id) %></ul>
+    <%end%>

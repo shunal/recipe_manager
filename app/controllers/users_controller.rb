@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end 
 
   def show
-       @user = User.find(params[:id])
-       @recipes = Recipe.find_by(user_id: params[:id]) 
+     @user = User.find(params[:id])
+     @recipes = Recipe.find_by(user_id: params[:id]) 
   end 
 
   def new

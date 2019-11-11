@@ -1,0 +1,6 @@
+<h1>Here are all the recipes users have created for the <%= @category.name %> category</h1>
+    <% @category.recipes.each do |t|%>
+        <ul>
+            <h3><%= link_to t.name, recipe_path(t.id) %></h3>
+        </ul>
+    <%end%>

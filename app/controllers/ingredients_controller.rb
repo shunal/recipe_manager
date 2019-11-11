@@ -14,7 +14,7 @@ class IngredientsController < ApplicationController
 
     def create
         
-        @ingredient = Ingredient.new(ingredient_params)
+        @ingredient = Ingredient.find_or_create_by(ingredient_params)
         if @ingredient.save
          redirect_to recipe_path(@ingredient.recipe_id)
         else

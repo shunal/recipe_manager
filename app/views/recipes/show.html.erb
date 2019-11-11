@@ -1,6 +1,6 @@
-
-<h1><%= @recipe.name %></h1>
+<h2><%= @recipe.category.name %></h2>
+<h3><%= @recipe.name %></h3>
 <% @recipe.ingredients.each do |t| %>
     <li><%= t.name %></li>
     <%end%>
-<%= link_to "Add Ingredients", new_recipe_ingredient_path(@recipe) %>
+<%= link_to "Add Ingredient", new_recipe_ingredient_path(@recipe) %>
